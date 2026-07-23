@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PERFUMY | Products</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+          rel="stylesheet">
+
+
+    <!-- EXTERNAL CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- INTERNAL CSS -->
+
+    <style>
+
+        :root {
+            --bg-color: #0d0d0d;
+            --surface-color: #161616;
+            --accent-color: #d4af37;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.9),
+                transparent
+            );
+
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 45px;
+            font-weight: 400;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--accent-color);
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(13, 13, 13, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 20px 25px;
+            transition: 0.4s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+            background-color: #222;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin: 60px 0 30px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 20px 40px 60px;
+        }
+
+        /* CSS BOX MODEL */
+
+        .card {
+
+            /* CONTENT */
+
+            width: 320px;
+
+            /* PADDING */
+
+            padding: 20px;
+
+            /* BORDER */
+
+            border: 2px solid var(--border-color);
+
+            /* MARGIN */
+
+            margin: 20px;
+
+            /* BOX MODEL */
+
+            box-sizing: border-box;
+
+            background-color: var(--surface-color);
+
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+
+            box-shadow:
+                0 20px 40px
+                rgba(0, 0, 0, 0.5);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: block;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px;
+            transition: 0.4s;
+        }
+
+        .card a:hover {
+            background-color: var(--accent-color);
+            color: black;
+        }
+
+        footer {
+            background-color: #060606;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+        }
+
+        @media(max-width:768px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                padding: 15px 10px;
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>PERFUMY</h1>
+
+        <p>Haute Parfumerie</p>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="home.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- PRODUCTS -->
+
+    <h2 class="section-title">
+
+        The Curated Collection
+
+    </h2>
+
+
+    <section class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="card">
+
+            <div class="card-img-wrapper">
+
+                <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMwt_xjPsyUpxGydU2AgzrbzfRgoHsMHTxiNrSJXu1t0J9tQoJk9q8CvLz&s=10"
+                alt="Luxury Charm">
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>Luxury Charm</h3>
+
+                <p>
+                    An intense, long-lasting signature
+                    composition for women.
+                </p>
+
+                <a href="https://www.flipkart.com"
+                   target="_blank">
+
+                    Discover Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="card">
+
+            <div class="card-img-wrapper">
+
+                <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/044/637/762/small_2x/3d-rendering-of-a-perfume-bottles-on-transparent-background-free-png.png"
+                alt="Elegant Bloom">
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>Elegant Bloom</h3>
+
+                <p>
+                    A crisp, refreshing bouquet
+                    of rare floral essences.
+                </p>
+
+                <a href="https://www.flipkart.com"
+                   target="_blank">
+
+                    Discover Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="card">
+
+            <div class="card-img-wrapper">
+
+                <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJFlWhNatl-TuwtlCLAqycvqABIx0fTnRzXbwZlfBHA&s=10"
+                alt="Royal Oud">
+
+            </div>
+
+
+            <div class="card-content">
+
+                <h3>Royal Oud</h3>
+
+                <p>
+                    Rich, sophisticated prestige
+                    wood formulation for men.
+                </p>
+
+                <a href="https://www.flipkart.com"
+                   target="_blank">
+
+                    Discover Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Perfumy Premium Brand
+            | Haute Parfumerie
+            | All Rights Reserved
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
